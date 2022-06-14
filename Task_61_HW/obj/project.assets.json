@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\Desktop\\GB\\005 - Знакомство с C#\\008 - Seminar 2022 06 02\\Task_61\\Task_61.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Desktop\\GB\\005 - Знакомство с C#\\008 - Seminar 2022 06 02\\Task_61_HW\\Task_61.csproj",
       "projectName": "Task_61",
-      "projectPath": "C:\\Users\\HP\\Desktop\\GB\\005 - Знакомство с C#\\008 - Seminar 2022 06 02\\Task_61\\Task_61.csproj",
+      "projectPath": "C:\\Users\\HP\\Desktop\\GB\\005 - Знакомство с C#\\008 - Seminar 2022 06 02\\Task_61_HW\\Task_61.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\Desktop\\GB\\005 - Знакомство с C#\\008 - Seminar 2022 06 02\\Task_61\\obj\\",
+      "outputPath": "C:\\Users\\HP\\Desktop\\GB\\005 - Знакомство с C#\\008 - Seminar 2022 06 02\\Task_61_HW\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config"

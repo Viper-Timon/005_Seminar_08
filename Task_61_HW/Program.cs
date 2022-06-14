@@ -2,33 +2,37 @@
 // Сделать вывод
 // в виде равнобедренного треугольника
 
-Console.WriteLine("Введите количество строк для треугольника Паскаля");
+Console.WriteLine("Введите N строк для треугольника Паскаля");
 int num = int.Parse(Console.ReadLine());
-int n = num + 1;
 
-int[,] array = new int[n, n];
-
-for (int i = 0; i < n; i++)
+void PrintPascalTriangle(int nRow)
 {
-    string emptStr = String.Concat(Enumerable.Repeat("   ", n - i));
-    Console.Write(emptStr);
+    int n = nRow + 1;
 
-    for (int j = 0; j <= i; j++)
+    int[,] array = new int[n, n];
+
+    for (int i = 0; i < n; i++)
     {
-        if (i == 0 || j == 0 || i == j || i == 1)
-        {
+        string emptStr = String.Concat(Enumerable.Repeat("   ", n - i));
+        Console.Write(emptStr);
 
-            array[i, j] = 1;
-            Console.Write($"{array[i, j],6}");
-        }
-        else
+        for (int j = 0; j <= i; j++)
         {
-            array[i, j] = array[i - 1, j - 1] + array[i - 1, j];
-            Console.Write($"{array[i, j], 6}");
+            if (i == 0 || j == 0 || i == j || i == 1)
+            {
+
+                array[i, j] = 1;
+                Console.Write($"{array[i, j],6}");
+            }
+            else
+            {
+                array[i, j] = array[i - 1, j - 1] + array[i - 1, j];
+                Console.Write($"{array[i, j],6}");
+            }
         }
+        Console.WriteLine();
     }
-    Console.WriteLine();
 }
 
-
+PrintPascalTriangle(num);
 
