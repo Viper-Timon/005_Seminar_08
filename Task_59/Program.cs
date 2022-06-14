@@ -40,12 +40,6 @@ void PrintArray(int[,] array)
     }
 }
 
-int m = 4;
-int n = 4;
-int[,] arr = GetArray(m, n);
-PrintArray(arr);
-Console.WriteLine();
-
 int[,] GetCutedArray(int[,] array)
 {
     int a = array.GetLength(0);
@@ -81,26 +75,13 @@ int[,] GetCutedArray(int[,] array)
 
             tempArray[i, j] = array[i + movi, j + movj];
 
-            // _________на групповых решениях была идея поделить по зонам выполнение условий, но где-то была ошибка.
+            // _________на групповых решениях была идея поделить по зонам выполнение условий, метод так и нереализован
 
-            // if (i < minPosi && j < minPosj)
-            //     tempArray[i, j] = array[i, j];
-
-
-            // else if (i >= minPosi)
-            //           tempArray[i, j] = array[i + 1, j];
-
-            // else if (j >= minPosj)
-            //          tempArray[i,j] = array[i,j+1];
-            // else if (i == minPosi && j == minPosj)
-            //          tempArray[i,j] = array[i+1,j+1];
-            // else tempArray[i,j] = array[i+1,j+1];
-
-
+        
         }
     }
 
-    Console.WriteLine($"{min} i = {minPosi} j = {minPosj}");
+    //Console.WriteLine($"{min} i = {minPosi} j = {minPosj}");
     return tempArray;
 }
 
@@ -135,6 +116,14 @@ void PrintMinLines (int [,] array)
 
     }
 }
+
+
+int m = 4;
+int n = 4;
+int[,] arr = GetArray(m, n);
+PrintArray(arr);
+Console.WriteLine();
+
 
 
 PrintMinLines(arr);

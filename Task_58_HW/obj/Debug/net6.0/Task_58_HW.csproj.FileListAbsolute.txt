@@ -1,0 +1,15 @@
+C:\Users\HP\Desktop\GB\005 - Знакомство с C#\008 - Seminar 2022 06 02\Task_58_HW\obj\Debug\net6.0\Task_58_HW.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\GB\005 - Знакомство с C#\008 - Seminar 2022 06 02\Task_58_HW\obj\Debug\net6.0\Task_58_HW.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Desktop\GB\005 - Знакомство с C#\008 - Seminar 2022 06 02\Task_58_HW\obj\Debug\net6.0\Task_58_HW.AssemblyInfoInputs.cache
+C:\Users\HP\Desktop\GB\005 - Знакомство с C#\008 - Seminar 2022 06 02\Task_58_HW\obj\Debug\net6.0\Task_58_HW.AssemblyInfo.cs
+C:\Users\HP\Desktop\GB\005 - Знакомство с C#\008 - Seminar 2022 06 02\Task_58_HW\obj\Debug\net6.0\Task_58_HW.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\GB\005 - Знакомство с C#\008 - Seminar 2022 06 02\Task_58_HW\bin\Debug\net6.0\Task_58_HW.exe
+C:\Users\HP\Desktop\GB\005 - Знакомство с C#\008 - Seminar 2022 06 02\Task_58_HW\bin\Debug\net6.0\Task_58_HW.deps.json
+C:\Users\HP\Desktop\GB\005 - Знакомство с C#\008 - Seminar 2022 06 02\Task_58_HW\bin\Debug\net6.0\Task_58_HW.runtimeconfig.json
+C:\Users\HP\Desktop\GB\005 - Знакомство с C#\008 - Seminar 2022 06 02\Task_58_HW\bin\Debug\net6.0\Task_58_HW.dll
+C:\Users\HP\Desktop\GB\005 - Знакомство с C#\008 - Seminar 2022 06 02\Task_58_HW\bin\Debug\net6.0\Task_58_HW.pdb
+C:\Users\HP\Desktop\GB\005 - Знакомство с C#\008 - Seminar 2022 06 02\Task_58_HW\obj\Debug\net6.0\Task_58_HW.dll
+C:\Users\HP\Desktop\GB\005 - Знакомство с C#\008 - Seminar 2022 06 02\Task_58_HW\obj\Debug\net6.0\refint\Task_58_HW.dll
+C:\Users\HP\Desktop\GB\005 - Знакомство с C#\008 - Seminar 2022 06 02\Task_58_HW\obj\Debug\net6.0\Task_58_HW.pdb
+C:\Users\HP\Desktop\GB\005 - Знакомство с C#\008 - Seminar 2022 06 02\Task_58_HW\obj\Debug\net6.0\Task_58_HW.genruntimeconfig.cache
+C:\Users\HP\Desktop\GB\005 - Знакомство с C#\008 - Seminar 2022 06 02\Task_58_HW\obj\Debug\net6.0\ref\Task_58_HW.dll
