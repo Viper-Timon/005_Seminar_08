@@ -38,34 +38,50 @@ void FindElemRepeat(int[,] array)
 {
     int a = array.GetLength(0);
     int b = array.GetLength(1);
-    int [] arrayFull = new int [a*b];
-    int i = 0;
-    foreach (int elem in array)
+    int[] arrayFull = new int[a * b];
+    int countFull = 0;
+    for (int i = 0; i < a; i++)
     {
-        arrayFull[i]=elem;
-        i++;
-        Console.Write($"{arrayFull[i]} ");
+        for (int j = 0; j < b; j++)
+        {
+            if (countFull < a * b)
+            {
+                arrayFull[countFull] = array[i, j];
+                //Console.Write($"{arrayFull[countFull]} "); // для проверки строчного вывода
+                countFull++;
+            }
+        }
     }
 
-    foreach (int elem in array)
+    
+    for (int i = 0; i < a * b; i++)
     {
-       
         int count = 0;
-        Console.Write($"{elem} повторяется ");
-        foreach (int item in array)
+        int flag = 0;
+
+        for (int j = 0; j < a * b; j++)
         {
-            if (elem == item) count++;
+            if (arrayFull[i] == arrayFull[j]) count++;
         }
-        Console.WriteLine($"{count} раз");
+
+        for (int k = 0; k < i; k++)
+        {
+            if (arrayFull[i]==arrayFull[k]) flag++;
+        }
+
+        if (flag==0)
+        {
+        Console.WriteLine($"{arrayFull[i]} повторяется {count} раз");
+        }
+
     }
     Console.WriteLine();
-
 }
 
 
 
-int m = 3;
-int n = 4;
+int m = 5;
+int n = 7;
 int[,] arr = GetArray(m, n);
 
 
