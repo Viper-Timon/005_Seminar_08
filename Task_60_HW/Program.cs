@@ -5,36 +5,41 @@
 
 int[,,] Get3dRndArray(int a, int b, int c) // справедливо при (a*b*c) < 90
 {
-    int[,,] array = new int[a, b, c];
-    Random rndNum = new Random();
-    // foreach (int l in array);
-    for (int i = 0; i < array.GetLength(0); i++)
+    вав // для подсветки
+    if (a * b * c < 90)
     {
-        for (int j = 0; j < array.GetLength(1); j++)
+        int[,,] array = new int[a, b, c];
+        Random rndNum = new Random();
+
+        for (int i = 0; i < array.GetLength(0); i++)
         {
-            for (int k = 0; k < array.GetLength(2); k++)
+            for (int j = 0; j < array.GetLength(1); j++)
             {
-                array[i, j, k] = rndNum.Next(10, 100);
-                foreach (int l in array)
+                for (int k = 0; k < array.GetLength(2); k++)
                 {
-                    Console.Write($"{l} {array[i, j, k]} | ");
-                    if (l == array[i, j, k])
+                    array[i, j, k] = rndNum.Next(10, 100);
+                    foreach (int l in array)
                     {
-                        Console.Write($"++++");
-                        array[i, j, k] = rndNum.Next(10, 100);
-                        break;
+                        Console.Write($"{l} {array[i, j, k]} | ");
+                        if (l == array[i, j, k])
+                        {
+                            array[i, j, k] = rndNum.Next(10, 100);
+                            Console.WriteLine(array[i, j, k]);
+                            Console.WriteLine();
+                        }
+                        Console.WriteLine();
                     }
-                    // Console.Write($"{l} ");
                 }
-                Console.WriteLine();
-                Console.WriteLine(array[i, j, k]);
-                Console.WriteLine();
-
             }
-
         }
+        Console.WriteLine();
+        return array;
     }
-    return array;
+    else
+    {
+        int[,,] array = new int[0, 0, 0];
+        return array;
+    }
 }
 
 void Print3dArray(int[,,] array)
@@ -66,7 +71,7 @@ void Print3dbyForeach(int[,,] array)
     }
     Console.WriteLine();
 }
-int a = 2;
+int a = 3;
 int b = 3;
 int c = 3;
 
