@@ -3,10 +3,10 @@
 // массив, добавляя индексы каждого элемента.
 
 
-int[,,] Get3dRndArray(int a, int b, int c) // справедливо при (a*b*c) < 90
+int[,,] Get3dRndArray(int a, int b, int c) // справедливо при (a*b*c) <= 90
 {
-    вав // для подсветки
-    if (a * b * c < 90)
+    
+    if (a * b * c <= 90)
     {
         int[,,] array = new int[a, b, c];
         Random rndNum = new Random();
@@ -18,25 +18,64 @@ int[,,] Get3dRndArray(int a, int b, int c) // справедливо при (a*b
                 for (int k = 0; k < array.GetLength(2); k++)
                 {
                     array[i, j, k] = rndNum.Next(10, 100);
-                    foreach (int l in array)
-                    {
-                        Console.Write($"{l} {array[i, j, k]} | ");
-                        if (l == array[i, j, k])
-                        {
-                            array[i, j, k] = rndNum.Next(10, 100);
-                            Console.WriteLine(array[i, j, k]);
-                            Console.WriteLine();
-                        }
-                        Console.WriteLine();
-                    }
                 }
+
             }
         }
+
+        //развертывание 3d в линейный массив
+        int[] arrayFull = new int[a * b * c];
+        int countFull = 0;
+        foreach (int elem in array)
+        {
+            arrayFull[countFull] = elem;
+            countFull++;
+        }
+
+        // arrayFull[0] = 45; // для проверки
+        // arrayFull[1] = 45; // для проверки
+        // arrayFull[2] = 45; // для проверки
+
+        // проверка на уникальность и присвоение нового случайного
+        for (int i = 0; i < a * b * c; i++)
+        {
+            int flag = 0;
+
+            for (int j = 0; j < i; j++)
+            {
+                if (arrayFull[i] == arrayFull[j]) flag++;
+            }
+
+            if (flag != 0)
+            {
+                arrayFull[i] = rndNum.Next(10, 100);
+                i--;
+            }
+
+        }
+
+        // Заполнение 3d массива значениями линейного
+        int indexNewFill = 0;
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            for (int j = 0; j < array.GetLength(1); j++)
+            {
+                for (int k = 0; k < array.GetLength(2); k++)
+                {
+                    array[i, j, k] = arrayFull[indexNewFill];
+                    indexNewFill++;
+                }
+
+            }
+        }
+
+
         Console.WriteLine();
         return array;
     }
     else
     {
+        Console.WriteLine ("Невозможно построить массив с уникальными элеентами такого размера");
         int[,,] array = new int[0, 0, 0];
         return array;
     }
@@ -71,11 +110,14 @@ void Print3dbyForeach(int[,,] array)
     }
     Console.WriteLine();
 }
+
+
 int a = 3;
 int b = 3;
-int c = 3;
+int c = 10;
 
 int[,,] arr = Get3dRndArray(a, b, c);
 Print3dArray(arr);
-Print3dbyForeach(arr);
+//Print3dbyForeach(arr);
+
 
