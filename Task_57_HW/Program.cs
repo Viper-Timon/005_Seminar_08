@@ -53,7 +53,7 @@ void FindElemRepeat(int[,] array)
         }
     }
 
-    
+
     for (int i = 0; i < a * b; i++)
     {
         int count = 0;
@@ -66,12 +66,22 @@ void FindElemRepeat(int[,] array)
 
         for (int k = 0; k < i; k++)
         {
-            if (arrayFull[i]==arrayFull[k]) flag++;
+            if (arrayFull[i] == arrayFull[k]) flag++;
         }
 
-        if (flag==0)
+        if (flag == 0)
         {
-        Console.WriteLine($"{arrayFull[i]} повторяется {count} раз");
+            if (count > 11 && count < 15)
+            { Console.WriteLine($"{arrayFull[i]} повторяется {count} раз"); }
+
+            else if (
+                (count % 10 > 1) && (count % 10 < 5)
+                )
+            {
+                Console.WriteLine($"{arrayFull[i]} повторяется {count} раза");
+            }
+
+            else Console.WriteLine($"{arrayFull[i]} повторяется {count} раз");
         }
 
     }
@@ -79,9 +89,8 @@ void FindElemRepeat(int[,] array)
 }
 
 
-
-int m = 5;
-int n = 7;
+int m = 10;
+int n = 20;
 int[,] arr = GetArray(m, n);
 
 
