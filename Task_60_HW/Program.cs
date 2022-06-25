@@ -5,8 +5,8 @@
 
 int[,,] Get3dRndArray(int a, int b, int c) // справедливо при (a*b*c) <= 90
 {
-    
-    if (a * b * c <= 90)
+
+    if (a * b * c <= 90 && a * b * c > 0)
     {
         int[,,] array = new int[a, b, c];
         Random rndNum = new Random();
@@ -75,7 +75,7 @@ int[,,] Get3dRndArray(int a, int b, int c) // справедливо при (a*b
     }
     else
     {
-        Console.WriteLine ("Невозможно построить массив с уникальными элеентами такого размера");
+        Console.WriteLine("Невозможно построить 3d массив с уникальными элеентами такого размера");
         int[,,] array = new int[0, 0, 0];
         return array;
     }
@@ -100,24 +100,12 @@ void Print3dArray(int[,,] array)
     Console.WriteLine();
 }
 
-
-void Print3dbyForeach(int[,,] array)
-{
-
-    foreach (int i in array)
-    {
-        Console.Write($"{i} ");
-    }
-    Console.WriteLine();
-}
-
-
 int a = 3;
 int b = 3;
 int c = 10;
 
 int[,,] arr = Get3dRndArray(a, b, c);
 Print3dArray(arr);
-//Print3dbyForeach(arr);
+
 
 

@@ -53,6 +53,22 @@ void FindElemRepeat(int[,] array)
         }
     }
 
+    
+    for (int i = 0; i < arrayFull.Length; i++) // сортировка по возрастания для красоты
+    {  
+        int temp = arrayFull[0];
+        for (int j = 0; j < arrayFull.Length - 1 - i; j++)
+        {
+            if (arrayFull[j] > arrayFull[j + 1])
+            {
+                temp = arrayFull[j];
+                arrayFull[j]= arrayFull[j + 1];
+                arrayFull[j + 1] = temp;
+            }
+        }
+    }
+
+
 
     for (int i = 0; i < a * b; i++)
     {
@@ -96,3 +112,4 @@ int[,] arr = GetArray(m, n);
 
 PrintArray(arr);
 FindElemRepeat(arr);
+

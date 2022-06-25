@@ -1,6 +1,8 @@
 ﻿// Задача 62: Заполните спирально массив 4 на 4.
 // Доп. задача 1.
 
+// некорректное решение // подсветка
+
 int[,] GetArray(int a, int b)
 {
     int[,] array = new int[a, b];
@@ -14,51 +16,74 @@ int[,] GetArray(int a, int b)
     return array;
 }
 
-int[,] GetArrayMask(int[,] array)
+int[,] FillSpiralArray(int[,] array)
 {
-    int[,] newArray = new int[array.GetLength(0) + 2, array.GetLength(0) + 2];
-    for (int i = 0; i < newArray.GetLength(0); i++)
+    int a = array.GetLength(0);
+    int b = array.GetLength(1);
+    int countElem = 1;
+    int indexi = 0;
+    int indexj = 0;
+    int limiter = 0;
+    int countTimesRound = a > b ? b : a; // поиск минимальной из длин массива для счетчика оборотов
+
+
+
+    for (int countRound = 0; countRound <= countTimesRound / 2; countRound++) // цикл оборотов
     {
-        for (int j = 0; j < newArray.GetLength(1); j++)
+        for (int j = indexj; j < b; j++)
         {
-            if (i == 0
-            || j == 0
-            || i == newArray.GetLength(0) - 1
-            || j == newArray.GetLength(1) - 1)
-                newArray[i, j] = 0;
-
-            else newArray[i, j] = 1;
+            int i = indexi;
+            if (array[i, j] == 0)
+            {
+                array[i, j] = countElem;
+                countElem++;
+                indexj = j;
+            }
         }
+
+        for (int i = indexi; i < a; i++)
+        {
+            int j = indexj;
+            if (array[i, j] == 0)
+            {
+                array[i, j] = countElem;
+                countElem++;
+                indexi = i;
+            }
+        }
+
+        for (int j = indexj; j >= limiter; j--)
+        {
+            int i = indexi;
+            if (array[i, j] == 0)
+            {
+                array[i, j] = countElem;
+                countElem++;
+                indexj = j;
+            }
+        }
+
+        for (int i = indexi; i >= limiter; i--)
+        {
+            int j = indexj;
+            if (array[i, j] == 0)
+            {
+                array[i, j] = countElem;
+                countElem++;
+                indexi = i;
+            }
+        }
+
+        indexi = countRound + 1;
+        indexj = countRound + 1;
+        a--;
+        b--;
+        limiter++;
     }
-    return newArray;
+
+    return array;
+
 }
-
-int[,] FillSpiralArray(int[,] array, int i, int j)
-{
-
-    if  (
-        array[i, j] == 0
-        && j < array.GetLength(1)
-        && i < array.GetLength(0)
-        )
-    {
-        array[i, j] = 3;
-
-        FillSpiralArray(array, i, j + 1);
-        FillSpiralArray(array, i + 1, j);
-        FillSpiralArray(array, i, j - 1);
-        FillSpiralArray(array, i - 1, j);
-
-        return array;
-    }
-    else
-    {
-        return array;
-    }
-
-
-}
-
 
 void PrintArray(int[,] array)
 {
@@ -66,7 +91,7 @@ void PrintArray(int[,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            Console.Write($"{array[i, j],2} ");
+            Console.Write($"{array[i, j],3} ");
         }
         Console.WriteLine();
     }
@@ -74,17 +99,10 @@ void PrintArray(int[,] array)
 }
 
 
-int m = 4;
-int n = 4;
+int m = 8;
+int n = 3;
 int[,] arr = GetArray(m, n);
+
+arr = FillSpiralArray(arr);
 PrintArray(arr);
-// arr = GetArrayMask(arr);
-// PrintArray(arr);
-arr = FillSpiralArray(arr, 0, 0);
-PrintArray(arr);
-//arr = FillSpiralArray(arr, 0, 0);
-//PrintArray(arr);
-
-
-
 
